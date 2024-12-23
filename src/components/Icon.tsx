@@ -19,7 +19,7 @@ export enum Icons {
   FILM = "film",
   DRAGON = "dragon",
   WARNING = "warning",
-  MOVIE_WEB = "movieWeb",
+  MOVIE_WEB = "kermit",
   TWITTER = "twitter",
   DISCORD = "discord",
   GITHUB = "github",
