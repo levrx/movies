@@ -71,7 +71,6 @@ export enum Icons {
   BRUSH = "brush",
   UPLOAD = "upload",
   WEB = "web",
-  KERMIT = "kermit",
 }
 
 export interface IconProps {
