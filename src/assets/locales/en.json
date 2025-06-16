@@ -373,7 +373,6 @@
         "login": "Continue to login"
       }
     },
-<<<<<<< HEAD
     "download": {
       "title": "Download data",
       "description": "This will download your data to your device. You can then upload it to the new server or just keep it for safekeeping.",
@@ -391,13 +390,6 @@
         "home": "Go home",
         "login": "Continue to login"
       }
-=======
-    "downtimeNotice": {
-        "badge": "Issues",
-        "goHome": "Go home",
-        "message": "levrx is experiencing issues with some providers again, if you cant find or play a show please change the source. Expect this error to persist throughout the below times.",
-        "title": "Provider issues"
->>>>>>> 07f1fc1f (Update en.json)
     },
     "upload": {
       "title": "Upload data",
