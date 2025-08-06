@@ -9,14 +9,14 @@ import { mediaItemToId } from "@/backend/metadata/tmdb";
 import { DotList } from "@/components/text/DotList";
 import { Flare } from "@/components/utils/Flare";
 import { useSearchQuery } from "@/hooks/useSearchQuery";
+import { useOverlayStack } from "@/stores/interface/overlayStack";
 import { usePreferencesStore } from "@/stores/preferences";
 import { MediaItem } from "@/utils/mediaTypes";
 
 import { MediaBookmarkButton } from "./MediaBookmark";
 import { IconPatch } from "../buttons/IconPatch";
 import { Icon, Icons } from "../Icon";
-import { DetailsModal } from "../overlays/details/DetailsModal";
-import { useModal } from "../overlays/Modal";
+import { DetailsModal } from "../overlays/detailsModal";
 
 export interface MediaCardProps {
   media: MediaItem;
@@ -67,6 +67,10 @@ function MediaCardContent({
 
   const [searchQuery] = useSearchQuery();
 
+  const enableLowPerformanceMode = usePreferencesStore(
+    (state) => state.enableLowPerformanceMode,
+  );
+
   if (isReleased() && media.year) {
     dotListContent.push(media.year.toFixed());
   }
@@ -79,7 +83,7 @@ function MediaCardContent({
     <Flare.Base
       className={`group -m-[0.705em] rounded-xl bg-background-main transition-colors duration-300 focus:relative focus:z-10 ${
         canLink ? "hover:bg-mediaCard-hoverBackground tabbable" : ""
-      }`}
+      } ${closable ? "jiggle" : ""}`}
       tabIndex={canLink ? 0 : -1}
       onKeyUp={(e) => e.key === "Enter" && e.currentTarget.click()}
     >
@@ -190,7 +194,7 @@ function MediaCardContent({
           <DotList className="text-xs" content={dotListContent} />
         </div>
 
-        {!closable && (
+        {!closable && !enableLowPerformanceMode && (
           <div className="absolute bottom-0 translate-y-1 right-1">
             <button
               className="media-more-button p-2"
@@ -219,7 +223,7 @@ export function MediaCard(props: MediaCardProps) {
     id: number;
     type: "movie" | "show";
   } | null>(null);
-  const detailsModal = useModal("details");
+  const { showModal } = useOverlayStack();
   const enableDetailsModal = usePreferencesStore(
     (state) => state.enableDetailsModal,
   );
@@ -254,14 +258,19 @@ export function MediaCard(props: MediaCardProps) {
       id: Number(media.id),
       type: media.type === "movie" ? "movie" : "show",
     });
-    detailsModal.show();
-  }, [media, detailsModal, onShowDetails]);
+    showModal("details");
+  }, [media, showModal, onShowDetails]);
 
   const handleCardClick = (e: React.MouseEvent) => {
     if (enableDetailsModal && canLink) {
       e.preventDefault();
       handleShowDetails();
     }
+  };
+
+  const handleCardContextMenu = (e: React.MouseEvent) => {
+    e.preventDefault();
+    handleShowDetails();
   };
 
   const content = (
@@ -280,6 +289,7 @@ export function MediaCard(props: MediaCardProps) {
             e.preventDefault();
           }
         }}
+        onContextMenu={handleCardContextMenu}
       >
         {content}
       </span>
@@ -295,6 +305,7 @@ export function MediaCard(props: MediaCardProps) {
         props.closable ? "hover:cursor-default" : "",
       )}
       onClick={handleCardClick}
+      onContextMenu={handleCardContextMenu}
     >
       {content}
     </Link>

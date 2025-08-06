@@ -94,7 +94,7 @@
         },
         "links": {
             "discord": "Discord",
-            "dmca": "DMCA",
+            "legal": "Legal / DMCA",
             "github": "GitHub",
             "twitter": "Twitter",
             "funding": "Nos ajude"
@@ -105,7 +105,7 @@
         "name": "P-Stream",
         "pages": {
             "about": "Sobre",
-            "dmca": "DMCA",
+            "legal": "Legal / DMCA",
             "login": "Entrar",
             "onboarding": "Configuração",
             "pagetitle": "{{title}} - P-Stream",
@@ -438,7 +438,7 @@
                 "text": "Não foi possível carregar os metadados da API. Por favor, verifique sua conexão com a internet.",
                 "title": "Falha ao carregar os metadados da API"
             },
-            "dmca": {
+            "legal": {
                 "badge": "Removido",
                 "text": "Esta mídia não está mais disponível devido a um aviso de remoção ou reivindicação de direitos autorais.",
                 "title": "A mídia foi removida"
@@ -513,8 +513,8 @@
         }
     },
     "screens": {
-        "dmca": {
-            "title": "DMCA"
+        "legal": {
+            "title": "Legal / DMCA"
         },
         "loadingApp": "Carregando aplicativo",
         "loadingUser": "Carregando seu perfil",

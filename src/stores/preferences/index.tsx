@@ -17,6 +17,8 @@ export interface PreferencesStore {
   proxyTmdb: boolean;
   febboxKey: string | null;
   realDebridKey: string | null;
+  enableLowPerformanceMode: boolean;
+  enableNativeSubtitles: boolean;
 
   setEnableThumbnails(v: boolean): void;
   setEnableAutoplay(v: boolean): void;
@@ -32,6 +34,8 @@ export interface PreferencesStore {
   setProxyTmdb(v: boolean): void;
   setFebboxKey(v: string | null): void;
   setRealDebridKey(v: string | null): void;
+  setEnableLowPerformanceMode(v: boolean): void;
+  setEnableNativeSubtitles(v: boolean): void;
 }
 
 export const usePreferencesStore = create(
@@ -51,6 +55,8 @@ export const usePreferencesStore = create(
       proxyTmdb: false,
       febboxKey: null,
       realDebridKey: null,
+      enableLowPerformanceMode: false,
+      enableNativeSubtitles: false,
       setEnableThumbnails(v) {
         set((s) => {
           s.enableThumbnails = v;
@@ -119,6 +125,16 @@ export const usePreferencesStore = create(
       setRealDebridKey(v) {
         set((s) => {
           s.realDebridKey = v;
+        });
+      },
+      setEnableLowPerformanceMode(v) {
+        set((s) => {
+          s.enableLowPerformanceMode = v;
+        });
+      },
+      setEnableNativeSubtitles(v) {
+        set((s) => {
+          s.enableNativeSubtitles = v;
         });
       },
     })),

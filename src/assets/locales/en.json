@@ -1,6 +1,6 @@
 {
   "about": {
-    "description": "levrx is a fork of p-stream that is ensured to stay up even after the shutdown of movie-web.app. levrx runs on a private, self-hosted VPS. I run this site at a loss; there are very minimal ads due to my beliefs in free media.",
+    "description": "levrx is a fork of levrx that is ensured to stay up even after the shutdown of movie-web.app. levrx runs on a private, self-hosted VPS. I run this site at a loss; there are very minimal ads due to my beliefs in free media.",
     "help": "Can't find an answer? <0>Get support here.</0>",
     "faqTitle": "Common questions",
     "searchPlaceholder": "Search FAQ...",
@@ -140,7 +140,9 @@
   },
   "actions": {
     "copied": "Copied",
-    "copy": "Copy"
+    "copy": "Copy",
+    "cancel": "Cancel",
+    "confirm": "Confirm"
   },
   "auth": {
     "createAccount": "Don't have an account yet 😬 <0>Create an account.</0>",
@@ -150,7 +152,13 @@
       "description": "Your passphrase acts as your username and password. Make sure to keep it safe as you will need to enter it to login to your account. <bold>Do NOT lose your passphrase!</bold>",
       "next": "I have saved my passphrase",
       "passphraseFrameLabel": "Passphrase",
-      "title": "Your passphrase"
+      "title": "Your passphrase",
+      "custom": "Custom",
+      "customPassphraseLabel": "Custom Passphrase",
+      "customPassphrasePlaceholder": "Enter your custom passphrase",
+      "useCustomPassphrase": "Use Custom Passphrase",
+      "invalidPassphraseCharacters": "Invalid passphrase characters. Only English letters, numbers 1-10, and normal symbols are allowed.",
+      "passphraseTooShort": "Passphrase must be at least 8 characters long."
     },
     "hasAccount": "Already have an account? <0>Login here.</0>",
     "login": {
@@ -208,7 +216,7 @@
     },
     "links": {
       "discord": "Discord",
-      "dmca": "DMCA",
+      "legal": "Legal / DMCA",
       "github": "GitHub",
       "twitter": "Twitter",
       "funding": "Support us"
@@ -219,7 +227,7 @@
     "name": "levrx",
     "pages": {
       "about": "About and FAQ",
-      "dmca": "DMCA",
+      "legal": "Legal / DMCA",
       "discover": "Discover",
       "support": "Support",
       "login": "Login",
@@ -233,7 +241,25 @@
   },
   "home": {
     "bookmarks": {
-      "sectionTitle": "Bookmarks"
+      "sectionTitle": "Bookmarks",
+      "showAll": "Show all",
+      "groups": {
+        "dropdown": {
+          "placeholderButton": "Add to group",
+          "empty": "No groups yet",
+          "addButton": "Add",
+          "removeFromGroup": "Remove from group",
+          "removeAll": "Remove all"
+        },
+        "reorder": {
+          "button": "Reorder",
+          "done": "Done",
+          "title": "Edit Group Order",
+          "description": "Drag and drop to reorder your bookmark groups",
+          "cancel": "Cancel",
+          "save": "Save"
+        }
+      }
     },
     "continueWatching": {
       "sectionTitle": "Continue Watching..."
@@ -309,7 +335,9 @@
       "show": "Show"
     },
     "episodeShort": "E",
-    "seasonShort": "S"
+    "seasonShort": "S",
+    "seasonWatched": "Are you sure you want to mark the season as watched?",
+    "seasonUnwatched": "Are you sure you want to mark the season as unwatched?"
   },
   "details": {
     "resume": "Resume",
@@ -397,7 +425,8 @@
       "status": {
         "processing": "Processing data...",
         "error": "Failed to upload your data. 😿",
-        "success": "Your data has been uploaded successfully! 🎉"
+        "success": "Your data has been uploaded successfully! 🎉",
+        "successLocal": "Your data has been saved locally! 🎉"
       },
       "file": {
         "description": "Select the file you want to upload",
@@ -415,7 +444,8 @@
         "import": "Import data",
         "processing": "Processing...",
         "success": "Import complete",
-        "home": "Continue to home"
+        "home": "Continue to home",
+        "saveLocal": "Save locally"
       }
     },
     "back": "Go back"
@@ -503,8 +533,8 @@
           "default": "3. Default Setup",
           "defaultDescription": "Uses levrx's built-in proxy. It's the easiest option but might be slower due to shared bandwidth.",
           "fedapi": {
-            "fedapi": "Additional: FED API (Private) token",
-            "fedapiDescription": "Bring your own FREE Febbox account to gain access to FED API (Private), the best source with 4K quality, Dolby Atmos, skip intro and the fastest load times! Highly recommended option!"
+            "fedapi": "Additional: Febbox token",
+            "fedapiDescription": "Bring your own FREE Febbox account to gain access to FED API and CIA API, the best sources with 4K quality, Dolby Atmos, skip intro and the fastest load times! Highly recommended option!"
           },
           "outro": "If you have more questions on how this works, feel free to ask on the <0>levrx Discord</0> server!"
         },
@@ -513,15 +543,15 @@
           "subtitle": "Recommended Configurations:",
           "desktop": {
             "title": "Desktop:",
-            "description": "Extension + FED API (Private)"
+            "description": "Extension + Febbox token"
           },
           "iOS": {
             "title": "iOS:",
-            "description": "Custom proxy + FED API (Private)"
+            "description": "Custom proxy + Febbox token"
           },
           "android": {
             "title": "Android:",
-            "description": "Extension + FED API (Private)"
+            "description": "Extension + Febbox token"
           }
         }
       },
@@ -565,6 +595,11 @@
         "copyHlsPlaylist": "Copy HLS playlist link",
         "downloadSubtitle": "Download current subtitle",
         "downloadVideo": "Download video",
+        "openIn": "Open in...",
+        "vlc": "VLC",
+        "iina": "IINA",
+        "outplayer": "Outplayer",
+        "hlsOpenInDisclaimer": "Opening HLS streams in an external player MAY NOT WORK!",
         "hlsDisclaimer": "Downloads are taken directly from the provider. levrx does not have control over how the downloads are provided.<br /><br />Please note you are downloading an HLS playlist, <bold>it is not recommended to download if you are not familiar with advanced streaming formats</bold>. Try different sources for different formats.",
         "onAndroid": {
           "1": "To download on Android, click the download button then, on the new page, <bold>tap and hold</bold> on the video, then select <bold>save</bold>.",
@@ -593,12 +628,16 @@
         "unairedEpisodes": "One or more episodes in this season have been disabled because they haven't been aired yet.",
         "seasons": "Seasons",
         "showMore": "Show more",
-        "showLess": "Show less"
+        "showLess": "Show less",
+        "markAsWatched": "Mark as watched",
+        "markAsUnwatched": "Mark as unwatched"
       },
       "playback": {
         "speedLabel": "Playback speed",
         "title": "Playback settings",
-        "disabled": "(Disabled in watch party)"
+        "disabled": "(Disabled in watch party)",
+        "speedBoosted": "Playback speed boosted to 2x",
+        "speedUnboosted": "Playback speed reset to {{speed}}x"
       },
       "quality": {
         "automaticLabel": "Automatic quality",
@@ -640,8 +679,8 @@
         "customizeLabel": "Customize",
         "offChoice": "Off",
         "onChoice": "On",
-        "SourceChoice": "Source Captions",
-        "OpenSubtitlesChoice": "OpenSubtitles",
+        "SourceChoice": "Source Subtitles",
+        "OpenSubtitlesChoice": "External Subtitles",
         "settings": {
           "backlink": "Custom subtitles",
           "delay": "Subtitle delay",
@@ -651,6 +690,8 @@
         "unknownLanguage": "Unknown",
         "dropSubtitleFile": "Drop subtitle file here! >_<",
         "scrapeButton": "Scrape subtitles",
+        "refresh": "Refresh External Subtitles",
+        "refreshing": "Refreshing...",
         "empty": "There are no provided subtitles for this.",
         "notFound": "None of the available options match your query",
         "useNativeSubtitles": "Use native video subtitles",
@@ -670,7 +711,7 @@
         "text": "Could not load API metadata, please check your internet connection.",
         "title": "Failed to load API metadata"
       },
-      "dmca": {
+      "legal": {
         "badge": "Removed",
         "text": "This media is no longer available due to a takedown notice or copyright claim. 😨",
         "title": "Media has been removed"
@@ -708,6 +749,8 @@
         "errorNetwork": "Some kind of network error occurred which prevented the media from being successfully fetched, despite having previously been available.",
         "errorNotSupported": "The media or media provider object is not supported."
       },
+      "copyDebugInfo": "Copy debug info",
+      "debugInfo": "Check console for more details.",
       "homeButton": "Go home",
       "text": "There was an error trying to play the media 😖. Please try again or try a different source!",
       "title": "Failed to play video!"
@@ -795,8 +838,8 @@
     }
   },
   "screens": {
-    "dmca": {
-      "title": "DMCA"
+    "legal": {
+      "title": "Legal / DMCA"
     },
     "loadingApp": "Loading application",
     "loadingUser": "Loading your profile",
@@ -961,6 +1004,7 @@
       }
     },
     "preferences": {
+      "title": "Preferences",
       "language": "Application language",
       "languageDescription": "Language applied to the entire application, only English has silly stuff 🙁.",
       "thumbnail": "Generate thumbnails",
@@ -972,9 +1016,11 @@
       "skipCredits": "Skip End Credits",
       "skipCreditsDescription": "When enabled, automatically play the next episode at 99% completion to skip end credits. When disabled, wait until the episode is fully completed.",
       "skipCreditsLabel": "Skip end credits",
+      "lowPerformanceMode": "Low performance/bandwidth mode",
+      "lowPerformanceModeDescription": "Optimizes the application for slower connections and devices by disabling bandwidth-heavy features. This mode reduces data usage and improves performance while keeping the core search and watch functionality intact. ",
+      "lowPerformanceModeLabel": "Low performance mode",
       "sourceOrder": "Reordering sources",
       "sourceOrderDescription": "Drag and drop to reorder sources. This will determine the order in which sources are checked for the media you are trying to watch. If a source is greyed out, it means the <bold>extension</bold> is required for that source. <br><br> <strong>(The default order is best for most users)</strong>",
-      "title": "Preferences",
       "sourceOrderEnableLabel": "Custom source order"
     },
     "reset": "Reset",
@@ -1072,8 +1118,8 @@
   },
   "fedapi": {
     "onboarding": {
-      "title": "FED API (Private) token",
-      "description": "Bring your own FREE Febbox account to gain access to FED API (Private), the best source with 4K quality, Dolby Atmos, skip intro and the fastest load times! Highly recommended option!"
+      "title": "Febbox token",
+      "description": "Bring your own FREE Febbox account to gain access to FED API and CIA API, the best sources with 4K quality, Dolby Atmos, skip intro and the fastest load times! Highly recommended option!"
     },
     "setup": {
       "title": "To get your UI token:",
@@ -1083,9 +1129,17 @@
         "1": "1. Go to <0>febbox.com</0> and log in with Google (use a fresh account!)",
         "2": "2. Open DevTools or inspect the page",
         "3": "3. Go to Application tab → Cookies",
-        "4": "4. Copy the 'ui' cookie.",
+        "4": "4. Copy the 'ui' cookie's value.",
         "5": "5. Close the tab, but do NOT logout!",
         "warning": "(Do not share this token!)"
+      },
+      "tokenLabel": "Token",
+      "tokenExample": {
+        "button": "(Example)",
+        "title": "Example Token",
+        "description": "This is what a Febbox UI token looks like:",
+        "warning": "Don't try to use, it's fake.",
+        "close": "Got it"
       }
     },
     "status": {

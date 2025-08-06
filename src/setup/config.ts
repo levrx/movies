@@ -2,7 +2,7 @@ import {
   APP_VERSION,
   BACKEND_URL,
   DISCORD_LINK,
-  GITHUB_LINK,
+  // GITHUB_LINK,
   TWITTER_LINK,
 } from "./constants";
 
@@ -30,6 +30,8 @@ interface Config {
   SHOW_AD: boolean;
   AD_CONTENT_URL: string;
   TRACK_SCRIPT: string;
+  BANNER_MESSAGE: string;
+  BANNER_ID: string;
 }
 
 export interface RuntimeConfig {
@@ -56,6 +58,8 @@ export interface RuntimeConfig {
   SHOW_AD: boolean;
   AD_CONTENT_URL: string[];
   TRACK_SCRIPT: string | null;
+  BANNER_MESSAGE: string | null;
+  BANNER_ID: string | null;
 }
 
 const env: Record<keyof Config, undefined | string> = {
@@ -85,6 +89,8 @@ const env: Record<keyof Config, undefined | string> = {
   SHOW_AD: import.meta.env.VITE_SHOW_AD,
   AD_CONTENT_URL: import.meta.env.VITE_AD_CONTENT_URL,
   TRACK_SCRIPT: import.meta.env.VITE_TRACK_SCRIPT,
+  BANNER_MESSAGE: import.meta.env.VITE_BANNER_MESSAGE,
+  BANNER_ID: import.meta.env.VITE_BANNER_ID,
 };
 
 function coerceUndefined(value: string | null | undefined): string | undefined {
@@ -109,17 +115,17 @@ function getKey(key: keyof Config, defaultString?: string): string | null {
 export function conf(): RuntimeConfig {
   return {
     APP_VERSION,
-    GITHUB_LINK,
+    GITHUB_LINK: getKey("GITHUB_LINK", ""),
     DISCORD_LINK,
     TWITTER_LINK,
     DMCA_EMAIL: getKey("DMCA_EMAIL"),
     ONBOARDING_CHROME_EXTENSION_INSTALL_LINK: getKey(
       "ONBOARDING_CHROME_EXTENSION_INSTALL_LINK",
-      "https://docs.pstream.org/extension",
+      "https://docs.pstream.mov/extension",
     ),
     ONBOARDING_FIREFOX_EXTENSION_INSTALL_LINK: getKey(
       "ONBOARDING_FIREFOX_EXTENSION_INSTALL_LINK",
-      "https://docs.pstream.org/extension",
+      "https://docs.pstream.mov/extension",
     ),
     ONBOARDING_PROXY_INSTALL_LINK: getKey("ONBOARDING_PROXY_INSTALL_LINK"),
     BACKEND_URL: getKey("BACKEND_URL", BACKEND_URL),
@@ -157,5 +163,7 @@ export function conf(): RuntimeConfig {
       .map((v) => v.trim())
       .filter((v) => v.length > 0),
     TRACK_SCRIPT: getKey("TRACK_SCRIPT"),
+    BANNER_MESSAGE: getKey("BANNER_MESSAGE"),
+    BANNER_ID: getKey("BANNER_ID"),
   };
 }

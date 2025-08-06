@@ -94,7 +94,7 @@
         },
         "links": {
             "discord": "Discord",
-            "dmca": "DMCA",
+            "legal": "Legal / DMCA",
             "github": "GitHub",
             "twitter": "Twitter",
             "funding": "Apóyanos"
@@ -105,7 +105,7 @@
         "name": "P-Stream",
         "pages": {
             "about": "Acerca de",
-            "dmca": "DMCA",
+            "legal": "Legal / DMCA",
             "login": "Iniciar sesión",
             "onboarding": "Configurar",
             "pagetitle": "{{title}} - P-Stream",
@@ -438,7 +438,7 @@
                 "text": "No ha sido posible cargar la metadata de la API, por favor, comprueba tu conexión a internet.",
                 "title": "No ha sido posible cargar los metadatos de la API"
             },
-            "dmca": {
+            "legal": {
                 "badge": "Eliminado",
                 "text": "Este contenido no va a estar disponible debido a un aviso de eliminación o un reclamo de derechos de autor.",
                 "title": "El contenido ha sido eliminado"
@@ -506,8 +506,8 @@
         }
     },
     "screens": {
-        "dmca": {
-            "title": "DMCA"
+        "legal": {
+            "title": "Legal / DMCA"
         },
         "loadingApp": "Cargando la aplicación",
         "loadingUser": "Cargando tu perfil",
@@ -653,9 +653,7 @@
         "rating": "Clasificación:",
         "season": "Temporada",
         "resume": "Reanudar",
-        "cast": "Elenco:",
         "runtime": "Tiempo de ejecución:",
-        "languange": "Idioma:",
         "releaseDate": "Fecha de lanzamiento:",
         "votes": "votos",
         "tmdb": "Ver en TMDB",

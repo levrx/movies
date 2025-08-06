@@ -9,7 +9,7 @@ import { Icon, Icons } from "@/components/Icon";
 import { WideContainer } from "@/components/layout/WideContainer";
 import { MediaCard } from "@/components/media/MediaCard";
 import { MediaGrid } from "@/components/media/MediaGrid";
-import { DetailsModal } from "@/components/overlays/details/DetailsModal";
+import { DetailsModal } from "@/components/overlays/detailsModal";
 import { useModal } from "@/components/overlays/Modal";
 import { Heading1 } from "@/components/utils/Text";
 import {
@@ -84,6 +84,7 @@ export function MoreContent({ onShowDetails }: MoreContentProps) {
     mediaTitle: recommendationSources.find(
       (s) => s.id === selectedRecommendationId,
     )?.title,
+    isCarouselView: false,
   });
 
   // Handle content visibility
@@ -184,17 +185,19 @@ export function MoreContent({ onShowDetails }: MoreContentProps) {
           <div className="animate-pulse">
             <div className="h-8 bg-mediaCard-hoverBackground rounded w-1/4 mb-8" />
             <MediaGrid>
-              {Array.from({ length: 20 }).map((_, _i) => (
-                <div
-                  key={`loading-skeleton-${Math.random().toString(36).substring(7)}`}
-                  className="relative group cursor-default user-select-none rounded-xl p-2 bg-transparent"
-                >
-                  <div className="animate-pulse">
-                    <div className="w-full aspect-[2/3] bg-mediaCard-hoverBackground rounded-lg" />
-                    <div className="mt-2 h-4 bg-mediaCard-hoverBackground rounded w-3/4" />
+              {Array(20)
+                .fill(null)
+                .map(() => (
+                  <div
+                    key={`loading-skeleton-${Math.random().toString(36).substring(2)}`}
+                    className="relative group cursor-default user-select-none rounded-xl p-2 bg-transparent"
+                  >
+                    <div className="animate-pulse">
+                      <div className="w-full aspect-[2/3] bg-mediaCard-hoverBackground rounded-lg" />
+                      <div className="mt-2 h-4 bg-mediaCard-hoverBackground rounded w-3/4" />
+                    </div>
                   </div>
-                </div>
-              ))}
+                ))}
             </MediaGrid>
           </div>
         </WideContainer>

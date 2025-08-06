@@ -4,24 +4,86 @@
         "faqTitle": "Hüfig gstelti Froge",
         "q1": {
             "body": "P-Stream hostet kei Inhalt selber. Wenn du öpis zum Luege aaklicksch, wird s’Internet nach dem usgwählte Medium dürsuecht (uf em Ladebildschirm ond im Tab „Videoquellen“ gsesch, weli Quelle grad brucht wird). Medie wird nie vo P-Stream ufelade – alles lauft über die Suechfunktion.",
-            "title": "Woher stamme die Videos?"
+            "title": "Woher stamme die Videos?",
+            "section": "generel"
         },
         "q2": {
             "body": "Es isch nöd möglich, e Serie oder e Film z'wünsche, will P-Stream kei Inhalt verwaltet. Alles wird über Quellen im Internet agluegt.",
-            "title": "Wo chan ich en Serie oder en Felm afroge?"
+            "title": "Wo chan ich en Serie oder en Felm afroge?",
+            "section": "suechi"
         },
         "q3": {
             "body": "Üsi Suechergebnis chöme fo The Movie Database (TMDB) ond werde au azeigt, wenn üsi Quellene dä Inhalt vellecht tatsächlech net hend.",
-            "title": "T Suechergäbnis zeige t Serie ond t Felme, wiso chani si net abspele?"
+            "title": "T Suechergäbnis zeige t Serie ond t Felme, wiso chani si net abspele?",
+            "section": "suech"
         },
         "title": "Öber P-Stream (^▽^)",
         "q4": {
             "title": "Was esch met mine Date und em Stuff?",
-            "body": "Alli Date werdet met der Community-Backend synchronisiert, ond jede cha die au notze."
+            "body": "Alli Date werdet met der Community-Backend synchronisiert, ond jede cha die au notze.",
+            "section": "generel"
         },
         "q5": {
             "title": "Wie chani me usefende?",
-            "body": "P-Stream het en Discord server, me fendet en zoberscht of de Website!"
+            "body": "P-Stream het en Discord server, me fendet en zoberscht of de Website!",
+            "section": "generel"
+        },
+        "q9": {
+            "body": "Nei—wel mer kei Medie selber hei. Alli Medie basiere of däm, was öber d‘Suechfonktion öffentlich zuegänglech isch.",
+            "title": "Die Medie fehle / Chani si afroge?",
+            "section": "suech"
+        },
+        "q6": {
+            "body": "Momentan noni, aber du chasch en PWA (Progressive Web App) installiere. Of iOS, benotz Safari → Share → Add to Home Screen. Of Andriod, benotz Chrome → 3 dots → Add to Home Screen. En Beta fonere APK esch of üsem Discord verfüegbar, aber es werd net empfole.",
+            "title": "Gets en P-Stream app?",
+            "section": "generel"
+        },
+        "q15": {
+            "body": "Stel secher, das s‘Grät stom gschalte esch ond wächsle t Sources. Audio problem chöne fo de Source entsto.",
+            "title": "Wiso hani kei Audio?",
+            "section": "Wedergob"
+        },
+        "q13": {
+            "body": "Nem mol en anderi Source. D‘Qualität fo de Provider mängisch onterschedlech; FED API het öfters me Optione.",
+            "title": "D‘Video qualität esch net die woni erwartet ha.",
+            "section": "Wedergob"
+        },
+        "help": "Fendisch kei antwort? <0>Bechom en Antwort.</0>",
+        "searchPlaceholder": "Suech FAQ…",
+        "sections": {
+            "general": "Generel",
+            "playback": "Wedergobe Fehler",
+            "connections": "Verbendige",
+            "language": "Sproche & Ontertetel Ischtelige",
+            "search": "Suechi & Content verfüegbarkeit"
+        },
+        "q7": {
+            "title": "Wie mach ich en Account?",
+            "body": "Dröck “Sync to Cloud“ im dropdown menu oder gang it Ischtelige zom erstelle oder sync en community account.",
+            "section": "generel"
+        },
+        "q10": {
+            "title": "Ich cha der Felm/Serie net fende!",
+            "body": "TMDB betribt üsi Suechi. Versuech mol s‘🔎 icon az‘klicke för erwitereti suech optione, fals t ergäbnis net steme.",
+            "section": "suechi"
+        },
+        "q11": {
+            "title": "Wiso gseni en Black-Screen?",
+            "body": "Wahrschindlech ein beschädigts Video. Versuech en anderi Quelle.",
+            "section": "Wedergot"
+        },
+        "q12": {
+            "title": "D‘Episode woni lueg stemt net.",
+            "body": "Due zonere andere Source wächsle. Mer hei kei iflos of d‘Medie wo for Sources chöme.",
+            "section": "Wedergob"
+        },
+        "q14": {
+            "title": "4K esch net verfüegbar.",
+            "body": "Wen 4K net azeigt werd, esches warschindlech fo de Source net verfüegbar.",
+            "section": "Wedergob"
+        },
+        "q16": {
+            "title": "S‘Video esch blass oder verschwome."
         }
     },
     "actions": {
@@ -94,7 +156,7 @@
         },
         "links": {
             "discord": "Discord",
-            "dmca": "DMCA",
+            "legal": "Legal / DMCA",
             "github": "GitHub",
             "twitter": "Zwetschere",
             "funding": "Onterstötz üs"
@@ -105,7 +167,7 @@
         "name": "P-Stream",
         "pages": {
             "about": "Öber",
-            "dmca": "DMCA",
+            "legal": "Legal / DMCA",
             "login": "Amälde",
             "onboarding": "Irechte",
             "pagetitle": "{{title}} - P-Stream",
@@ -122,7 +184,7 @@
             "sectionTitle": "Läsezeiche"
         },
         "continueWatching": {
-            "sectionTitle": "Witer luete…"
+            "sectionTitle": "Witer luege…"
         },
         "mediaList": {
             "stopEditing": "Bearbeitig beände"
@@ -161,7 +223,7 @@
         },
         "titles": {
             "day": {
-                "default": "Was möchtisch a däm schöne nomital aluege?",
+                "default": "Was möchtisch a däm schöne nomitag aluege?",
                 "extra": [
                     "Viva la P-Stream e ciao Svizzera"
                 ]
@@ -365,7 +427,7 @@
                 "hlsDownloader": "Oder, goh uf d’<0>HLS Downloader-Website\\</0> und füeg die Playlist-URL vo unten ei."
             },
             "episodes": {
-                "button": "Folge",
+                "button": "Folg",
                 "emptyState": "Do si kei Folge i dere Staffle, lueg spöter nomol verbi (sorry :3)…",
                 "episodeBadge": "E{{episode}}",
                 "loadingError": "Fehler bem lade fo de Staffle",
@@ -374,7 +436,9 @@
                 "unairedEpisodes": "Ei oder meh Episodä in däre Staffel sind deaktiviert worde, will sie no nöd usgstrahlt worde sind.",
                 "seasons": "Staffle",
                 "showMore": "Zeig me",
-                "showLess": "Zeig weniger"
+                "showLess": "Zeig weniger",
+                "markAsWatched": "Markiers als agluegt",
+                "markAsUnwatched": "Markier als net agluegt"
             },
             "playback": {
                 "speedLabel": "Wedergabegschwendigkeit",
@@ -438,8 +502,8 @@
                 "useNativeSubtitlesDescription": "Cha d‘Ontertetel bi Casting ond im PiP behebe"
             },
             "watchparty": {
-                "watchpartyItem": "Zäme luege",
-                "notice": "Zäme luege esch felecht net för alli Quellene verfüegbar",
+                "watchpartyItem": "Watch Party",
+                "notice": "Watch Party esch felecht net för alli Quellene verfüegbar",
                 "legacyWatchparty": "Bruch die alti Watch Party"
             },
             "audio": {
@@ -451,7 +515,7 @@
                 "text": "Het API Metadata net chöne lade. Bitte check dini Internet verbendig.",
                 "title": "API Metadata het net chöne lade"
             },
-            "dmca": {
+            "legal": {
                 "badge": "Entfärne",
                 "text": "Die Medie isch nüm verfügbar wäge eme Takedown-Notice oder eme Urheberrechtsanspruch. 😨",
                 "title": "D‘Medie si glöscht worde"
@@ -552,8 +616,8 @@
         }
     },
     "screens": {
-        "dmca": {
-            "title": "DMCA"
+        "legal": {
+            "title": "Legal / DMCA"
         },
         "loadingApp": "D‘App werd glade",
         "loadingUser": "Dis Profil werd glade",
@@ -663,7 +727,10 @@
                 "featuredDescription": "Zeigt es Karussell met empohlene Felme ond Serie, zobersch of der Start-Site! Standardmässig usgschalte.",
                 "carouselView": "Karussell asecht",
                 "carouselViewDescription": "Zeigt dini Watch-Fortschret ond d‘gspicherete Felme imene Karrussel, anstell vonere Raschterasecht. Standartmässig usgschalte.",
-                "carouselViewLabel": "Karussell asecht"
+                "carouselViewLabel": "Karussell asecht",
+                "forceCompactEpisodeView": "Erzweng kompakte Episoden ansicht",
+                "forceCompactEpisodeViewDescription": "Erzweng die klassisch kompakt Asecht vom Episodekarussell im Player. Isch standartmässig deaktiviert.",
+                "forceCompactEpisodeViewLabel": "Kompakti Episodene"
             }
         },
         "connections": {
@@ -729,7 +796,10 @@
             "autoplay": "Autoplay",
             "autoplayDescription": "Spelt automatisch die nöchscht Episode inere Serie ab, sobald s‘Endo erreicht esch. Chan aktiviert werde vo Notzer met dr Browser-Erwiterig, eme eigene Proxy oder mit dr Standart-Irechtig, wenn s‘vom Host erlaubt isch.",
             "sourceOrderDescription": "Per Drag & Drop chasch t Quelle neu a‘ordne. Das bestimmt d‘Reihenfolg fo de Quelle wo abgsuecht wärde. Wenn e Quelle grau isch, heisst das, d’<bold>Erweiterig</bold> isch för die Quelle nötig. <br><br> <strong>(D’Standard-Reihenfolg isch für di meiste Notzer am beste)</strong>",
-            "skipCreditsLabel": "Skip d‘credits"
+            "skipCreditsLabel": "Skip d‘credits",
+            "lowPerformanceMode": "Performenc/bandwiti Modus",
+            "lowPerformanceModeDescription": "Optimiert d‘Application för schwachi verbendige met em drossle for Bandwiti feature. Dä Modus schränkt der Dateverbruch i, ohni d‘Hauptsuechi ond fonktione zom luege izschränke. ",
+            "lowPerformanceModeLabel": "Performenc Mode"
         },
         "reset": "Zurogsetze",
         "save": "Spichere",
@@ -891,18 +961,15 @@
         "title": "Jip"
     },
     "details": {
-        "director": "Direktor:",
-        "cast": "Besetzig:",
         "imdb": "Uf IMDb azeige",
         "resume": "Fortsetze",
         "play": "Abspele",
-        "languange": "Sprache:",
         "releaseDate": "Veröffentlichungsdatum:",
         "rating": "Bewertig:",
         "votes": "Stimmen",
         "tmdb": "Uf TMDB azeige",
-        "episodes": "Folge",
-        "season": "Staffele",
+        "episodes": "Folg",
+        "season": "Staffle",
         "runtime": "Laufzeit:",
         "airs": "Loft",
         "language": "Sproch:",
@@ -927,7 +994,6 @@
                 "movies": "{{category}} Filme",
                 "tvshows": "{{category}} Shows",
                 "inCinemas": "Im Kino",
-                "editorPicks": "Tipps",
                 "popularOn": "Beliebti {{type}} uf {{provider}}",
                 "loading": "Lade...",
                 "latestTVReleases": "Neuschti Serie",
@@ -947,17 +1013,6 @@
             },
             "change": "Ändere",
             "more": "Me Azeige"
-        },
-        "providers": {
-            "netflix": "Netflix",
-            "appleTv": "Apple TV+",
-            "amazonPrime": "Amazon Prime Video",
-            "hulu": "Hulu",
-            "max": "Max",
-            "paramountPlus": "Paramount Plus",
-            "disneyPlus": "Disney Plus",
-            "shudder": "Shudder",
-            "fubuTV": "fubuTV"
         },
         "randomMovie": {
             "button": "Lueg öpis zuefeligs",
@@ -994,7 +1049,6 @@
         },
         "status": {
             "success": "Erfolgrich",
-            "failure": "\"VIP\" Streams hei net chöne abgrüeft werde. Dä Token esch ongöltig oder d‘API isch ned erreichbar!",
             "api_down": "Erreicht FED API net!",
             "invalid_token": "Fehler bem hohle fom \"VIP\" stream. Din Token esch ongöltig."
         }
@@ -1014,7 +1068,7 @@
         "shareCode": "Teil dä Code met dine frönde (klick zom kopiere)",
         "connectedAsGuest": "Verbendet als Gascht zor Watch Party",
         "hostParty": "Host en Watch Party",
-        "joinParty": "Verbende zonere Watch Party",
+        "joinParty": "Join Watch Party",
         "viewers": "Zueschauer ({{count}})",
         "join": "Verbende",
         "cancel": "Abbräche",

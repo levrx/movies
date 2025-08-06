@@ -2,6 +2,7 @@ import { ThinContainer } from "@/components/layout/ThinContainer";
 import { Heading1, Paragraph } from "@/components/utils/Text";
 import { SubPageLayout } from "@/pages/layouts/SubPageLayout";
 import { ConfigValuesPart } from "@/pages/parts/admin/ConfigValuesPart";
+import { M3U8TestPart } from "@/pages/parts/admin/M3U8TestPart";
 import { RegionSelectorPart } from "@/pages/parts/admin/RegionSelectorPart";
 import { TMDBTestPart } from "@/pages/parts/admin/TMDBTestPart";
 import { WorkerTestPart } from "@/pages/parts/admin/WorkerTestPart";
@@ -19,6 +20,7 @@ export function AdminPage() {
         <BackendTestPart />
         <WorkerTestPart />
         <TMDBTestPart />
+        <M3U8TestPart />
         <RegionSelectorPart />
       </ThinContainer>
     </SubPageLayout>

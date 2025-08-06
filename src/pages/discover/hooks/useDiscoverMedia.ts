@@ -129,6 +129,8 @@ export interface UseDiscoverMediaProps {
   providerName?: string;
   /** Media title for recommendations display */
   mediaTitle?: string;
+  /** Whether this is for a carousel view (limits results) */
+  isCarouselView?: boolean;
 }
 
 /**
@@ -240,7 +242,7 @@ export function useDiscoverOptions(mediaType: MediaType) {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  const userLanguage = useLanguageStore.getState().language;
+  const userLanguage = useLanguageStore((s) => s.language);
   const formattedLanguage = getTmdbLanguageCode(userLanguage);
 
   const providers = mediaType === "movie" ? MOVIE_PROVIDERS : TV_PROVIDERS;
@@ -284,6 +286,7 @@ export function useDiscoverMedia({
   genreName,
   providerName,
   mediaTitle,
+  isCarouselView = false,
 }: UseDiscoverMediaProps): UseDiscoverMediaReturn {
   const [media, setMedia] = useState<DiscoverMedia[]>([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -294,7 +297,7 @@ export function useDiscoverMedia({
     useState<string>(contentType);
 
   const { t } = useTranslation();
-  const userLanguage = useLanguageStore.getState().language;
+  const userLanguage = useLanguageStore((s) => s.language);
   const formattedLanguage = getTmdbLanguageCode(userLanguage);
 
   // Reset media when content type or media type changes
@@ -308,15 +311,26 @@ export function useDiscoverMedia({
   const fetchTMDBMedia = useCallback(
     async (endpoint: string, params: Record<string, any> = {}) => {
       try {
+        // For carousel views, we only need one page of results
+        if (isCarouselView) {
+          params.page = "1"; // Always use first page for carousels
+        } else {
+          params.page = page.toString(); // Use the requested page for "view more" pages
+        }
+
         const data = await get<any>(endpoint, {
           api_key: conf().TMDB_READ_API_KEY,
           language: formattedLanguage,
-          page: page.toString(),
           ...params,
         });
 
+        // For carousel views, we might want to limit the number of results
+        const results = isCarouselView
+          ? data.results.slice(0, 20)
+          : data.results;
+
         return {
-          results: data.results.map((item: any) => ({
+          results: results.map((item: any) => ({
             ...item,
             type: mediaType === "movie" ? "movie" : "show",
           })),
@@ -327,7 +341,7 @@ export function useDiscoverMedia({
         throw err;
       }
     },
-    [formattedLanguage, page, mediaType],
+    [formattedLanguage, page, mediaType, isCarouselView],
   );
 
   const fetchTraktMedia = useCallback(
@@ -342,25 +356,45 @@ export function useDiscoverMedia({
         const response = await Promise.race([traktFunction(), timeoutPromise]);
 
         // Paginate the results
+        const pageSize = isCarouselView ? 20 : 100; // Limit to 20 items for carousels, get more for detailed views
         const { tmdb_ids: tmdbIds, hasMore: hasMoreResults } = paginateResults(
           response,
           page,
+          pageSize,
         );
 
+        // For carousel views, we only need to fetch details for displayed items
+        const idsToFetch = isCarouselView ? tmdbIds.slice(0, 20) : tmdbIds;
+
         // Fetch details for each TMDB ID
-        const mediaPromises = tmdbIds.map(async (tmdbId: number) => {
+        const mediaPromises = idsToFetch.map(async (tmdbId: number) => {
           const endpoint = `/${mediaType}/${tmdbId}`;
-          const data = await get<any>(endpoint, {
-            api_key: conf().TMDB_READ_API_KEY,
-            language: formattedLanguage,
-          });
-          return {
-            ...data,
-            type: mediaType === "movie" ? "movie" : "show",
-          };
+          try {
+            const data = await get<any>(endpoint, {
+              api_key: conf().TMDB_READ_API_KEY,
+              language: formattedLanguage,
+            });
+            return {
+              ...data,
+              type: mediaType === "movie" ? "movie" : "show",
+            };
+          } catch (err) {
+            console.error(`Error fetching details for TMDB ID ${tmdbId}:`, err);
+            return null; // Return null for failed items
+          }
         });
 
-        const results = await Promise.all(mediaPromises);
+        // Use Promise.allSettled to handle failed requests gracefully
+        const settledResults = await Promise.allSettled(mediaPromises);
+
+        // Filter out failed requests and nulls
+        const results = settledResults
+          .filter(
+            (result): result is PromiseFulfilledResult<any> =>
+              result.status === "fulfilled" && result.value !== null,
+          )
+          .map((result) => result.value);
+
         return {
           results,
           hasMore: hasMoreResults,
@@ -370,7 +404,7 @@ export function useDiscoverMedia({
         throw err;
       }
     },
-    [mediaType, formattedLanguage, page],
+    [mediaType, formattedLanguage, page, isCarouselView],
   );
 
   // Get Trakt function for provider
@@ -427,8 +461,11 @@ export function useDiscoverMedia({
     const picks =
       mediaType === "movie" ? EDITOR_PICKS_MOVIES : EDITOR_PICKS_TV_SHOWS;
 
+    // For carousel views, limit the number of picks to fetch
+    const picksToFetch = isCarouselView ? picks.slice(0, 20) : picks;
+
     try {
-      const mediaPromises = picks.map(async (item) => {
+      const mediaPromises = picksToFetch.map(async (item) => {
         const endpoint = `/${mediaType}/${item.id}`;
         const data = await get<any>(endpoint, {
           api_key: conf().TMDB_READ_API_KEY,
@@ -444,13 +481,13 @@ export function useDiscoverMedia({
       const results = await Promise.all(mediaPromises);
       return {
         results,
-        hasMore: false,
+        hasMore: picks.length > picksToFetch.length,
       };
     } catch (err) {
       console.error("Error fetching editor picks:", err);
       throw err;
     }
-  }, [mediaType, formattedLanguage]);
+  }, [mediaType, formattedLanguage, isCarouselView]);
 
   const fetchMedia = useCallback(async () => {
     setIsLoading(true);

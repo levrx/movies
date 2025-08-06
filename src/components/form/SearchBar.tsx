@@ -41,8 +41,7 @@ export const SearchBarInput = forwardRef<HTMLInputElement, SearchBarProps>(
       <div ref={containerRef}>
         <Flare.Base
           className={c({
-            "hover:flare-enabled group flex flex-col rounded-[28px] transition-colors sm:flex-row sm:items-center relative backdrop-blur-sm":
-              true,
+            "hover:flare-enabled group flex flex-col rounded-[28px] transition-colors sm:flex-row sm:items-center relative backdrop-blur-sm": true,
             "transition-colors duration-300": true,
             "bg-search-background/50": !focused && lightTheme,
             "bg-search-background":
@@ -112,6 +111,15 @@ export const SearchBarInput = forwardRef<HTMLInputElement, SearchBarProps>(
                     <p className="mb-0.5">Year search:</p>
                     <p className="text-type-secondary italic pl-2">
                       Inception year:2010
+                    </p>
+                  </div>
+                  <div>
+                    <p className="mb-0.5">Type search:</p>
+                    <p className="text-type-secondary italic pl-2">
+                      Marvel type:movie
+                    </p>
+                    <p className="text-type-secondary italic pl-2">
+                      Friends type:tv
                     </p>
                   </div>
                   <div>

@@ -94,7 +94,7 @@
         },
         "links": {
             "discord": "Discord",
-            "dmca": "DMCA",
+            "legal": "Legal / DMCA",
             "github": "GitHub",
             "twitter": "Twitter",
             "funding": "Támogass minket"
@@ -105,7 +105,7 @@
         "name": "P-Stream",
         "pages": {
             "about": "Rólunk",
-            "dmca": "DMCA",
+            "legal": "Legal / DMCA",
             "discover": "Felfedezés",
             "support": "Szupport",
             "login": "Bejelentkezés",
@@ -566,7 +566,7 @@
                 "text": "Nem sikerült betölteni az API metaadatját, kérlek nézd meg az internet kapcsolatodat.",
                 "title": "API metaadatainak betöltése sikertelen"
             },
-            "dmca": {
+            "legal": {
                 "badge": "Eltávolítva",
                 "title": "A tartalom el lett távolítva",
                 "text": "Ez a tartalom már nem érhető el eltávolítási értesítés vagy szerzői jogi igény miatt."
@@ -691,8 +691,8 @@
         }
     },
     "screens": {
-        "dmca": {
-            "title": "DMCA"
+        "legal": {
+            "title": "Legal / DMCA"
         },
         "loadingApp": "Applikáció betöltése",
         "loadingUser": "Profilod betöltése",

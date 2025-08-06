@@ -248,6 +248,38 @@ export async function multiSearch(
   return results;
 }
 
+export async function searchMovies(
+  query: string,
+): Promise<TMDBMovieSearchResult[]> {
+  const data = await get<{
+    results: TMDBMovieSearchResult[];
+  }>("search/movie", {
+    query,
+    include_adult: false,
+    page: 1,
+  });
+  return data.results.map((result) => ({
+    ...result,
+    media_type: TMDBContentTypes.MOVIE,
+  }));
+}
+
+export async function searchTVShows(
+  query: string,
+): Promise<TMDBShowSearchResult[]> {
+  const data = await get<{
+    results: TMDBShowSearchResult[];
+  }>("search/tv", {
+    query,
+    include_adult: false,
+    page: 1,
+  });
+  return data.results.map((result) => ({
+    ...result,
+    media_type: TMDBContentTypes.TV,
+  }));
+}
+
 export async function generateQuickSearchMediaUrl(
   query: string,
 ): Promise<string | undefined> {
@@ -434,6 +466,19 @@ export async function getMediaCredits(
 ): Promise<TMDBCredits> {
   const endpoint = type === TMDBContentTypes.MOVIE ? "movie" : "tv";
   return get<TMDBCredits>(`/${endpoint}/${id}/credits`);
+}
+
+export async function getRelatedMedia(
+  id: string,
+  type: TMDBContentTypes,
+  limit: number = 10,
+): Promise<TMDBMovieSearchResult[] | TMDBShowSearchResult[]> {
+  const endpoint = type === TMDBContentTypes.MOVIE ? "movie" : "tv";
+  const data = await get<{
+    results: TMDBMovieSearchResult[] | TMDBShowSearchResult[];
+  }>(`/${endpoint}/${id}/similar`);
+
+  return data.results.slice(0, limit);
 }
 
 export async function getPersonDetails(id: string): Promise<TMDBPerson> {

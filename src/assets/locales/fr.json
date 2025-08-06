@@ -4,29 +4,145 @@
         "faqTitle": "Questions fréquentes",
         "q1": {
             "body": "P-Stream n'héberge aucun contenu. Lorsque vous cliquez sur un élément à regarder, une recherche est effectuée sur Internet pour trouver le média sélectionné (sur l'écran de chargement et dans l'onglet \"sources vidéo\", vous pouvez voir quelle source vous utilisez). Les médias ne sont jamais téléchargés par P-Stream, tout passe par ce mécanisme de recherche.",
-            "title": "D’où proviennent les contenus proposés ?"
+            "title": "D’où proviennent les contenus proposés ?",
+            "section": "général"
         },
         "q2": {
             "body": "Il est impossible de demander un film ou une série, car P-Stream ne gère aucun contenu. Le contenu est récupéré en explorant d'autres sites sur Internet.",
-            "title": "Où puis-je demander une série ou un film ?"
+            "title": "Où puis-je demander une série ou un film ?",
+            "section": "rechercher"
         },
         "q3": {
             "body": "Nos résultats de recherche sont fournis par The Movie Database (TMDB) et peuvent s’afficher même si le contenu n’est pas réellement disponible via nos sources.",
-            "title": "Le film ou la série apparaît dans les résultats de recherche, pourquoi je ne peux pas le/la regarder ?"
+            "title": "Le film ou la série apparaît dans les résultats de recherche, pourquoi je ne peux pas le/la regarder ?",
+            "section": "rechercher"
         },
         "title": "À propos de P-Stream (^▽^)",
         "q4": {
             "body": "La synchronisation de toutes les données se fait sur la sudo-backend, qui diffère de la backend de communauté et est hébergé indépendamment par moi. Tout le monde peut également l'utiliser.",
-            "title": "Qu'en est-il de mes données ?"
+            "title": "Qu'en est-il de mes données ?",
+            "section": "général"
         },
         "q5": {
             "body": "P-Stream possède un serveur Discord qui peut être trouvé en-tête de page !",
-            "title": "Comment puis-je en savoir plus ?"
+            "title": "Comment puis-je en savoir plus ?",
+            "section": "général"
+        },
+        "searchPlaceholder": "Rechercher dans la FAQ...",
+        "sections": {
+            "general": "Général",
+            "search": "Recherche et disponibilité du contenu",
+            "playback": "Problèmes de lecture",
+            "connections": "Connexions",
+            "language": "Language et paramètre de sous-tirteage"
+        },
+        "help": "Vous ne trouvez pas de réponse ? <0>Contactez notre support ici.</0>",
+        "q14": {
+            "title": "La 4K n'est pas disponible.",
+            "body": "Si la 4K n'est pas affichée, elle n'est probablement pas disponible depuis cette source.",
+            "section": "lecture"
+        },
+        "q6": {
+            "section": "général",
+            "title": "Y a-t-il une application P-Stream ?",
+            "body": "Pas encore, mais vous pouvez l'installer en tant que PWA (Progressive Web App). Sur iOS, utilisez Safari → Partager → Sur l'écran d'accueil. Sur Android, utilisez Chrome → 3 points → Ajouter à l'écran d'accueil. Un APK expérimental est disponible via notre Discord, mais il n'est pas recommendé."
+        },
+        "q7": {
+            "title": "Comment créer un compte ?",
+            "body": "Appuyez sur \"Synchroniser vers le Cloud\" sur la liste déroulante ou allez sur les Paramètres pour créer et synchroniser un compte de communauté.",
+            "section": "général"
+        },
+        "q9": {
+            "title": "Il manque ce media / Puis-je demander des media ?",
+            "section": "rechercher",
+            "body": "Non — vu que nous n'hébergeons pas de contenu, nous ne pouvons ajouter ni changer ce qui est disponible. La liste du contenu est basée sur ce qui est publiquement accessible par le mécanisme de recherche."
+        },
+        "q10": {
+            "title": "Je ne peux pas trouver le film/série que je cherche !",
+            "body": "Nos recherches sont alimentées par TMDB. Essayez d'appuyer sur l'icône 🔎 pour des options de recherche avancées si les résultats ne sont pas précis.",
+            "section": "rechercher"
+        },
+        "q11": {
+            "title": "Pourquoi est-ce que je vois un écran noir ?",
+            "body": "Probablement un fichier vidéo cassé ou corrompu. Essayez de changer de source.",
+            "section": "lecture"
+        },
+        "q12": {
+            "title": "L'épisode que je regarde est incorrect.",
+            "section": "lecture",
+            "body": "Passez sur une source différente. Nous ne contrôlons ni le conten, ni la précision des épisodes."
+        },
+        "q13": {
+            "title": "La qualité vidéo n'est pas celle que j'attendais.",
+            "body": "Essayez de changer de source. La qualité varie par fournisseur ; l'API FED offre souvent plus d'options.",
+            "section": "lecture"
+        },
+        "q15": {
+            "title": "Pourquoi n'y a-t-il pas d'audio ?",
+            "section": "lecture",
+            "body": "Assurez-vous que le son de votre appareil n'est pas coupé et essayez de changer de source. Les problèmes d'audio peuvent être provoqués par certaines sources."
+        },
+        "q16": {
+            "title": "La vidéo est teinte ou pâle.",
+            "body": "Cela peut être causé par un mauvais fichier ou une vidéo HDR. Assurez-vous que votre appareil supporte le HDR, ou changez de source.",
+            "section": "lecture"
+        },
+        "q17": {
+            "title": "Je vois des bugs visuels.",
+            "section": "lecture",
+            "body": "Les bugs visuels viennent souvent de fichiers de mauvaise qualité. Essayez de changer de source."
+        },
+        "q18": {
+            "title": "La source se charge lentement.",
+            "section": "lecture",
+            "body": "La vitesse dépend du site d'hébergement. Passez sur une autre source pour de meilleures performances."
+        },
+        "q19": {
+            "title": "Comment est-ce que je change de source ?",
+            "body": "Pendant la lecture, appuyez sur l'icône ⚙️, puis choisissez une autre source dans \"sources vidéo\".",
+            "section": "lecture"
+        },
+        "q20": {
+            "title": "Qu'est-ce que l'API FED ?",
+            "body": "L'API FED est notre outil de récupération qui obtient des streams directement à partir de Febbox. Chaque compte Febbox gratuit inclut 100 Go par mois de bande passante illimitée, et nous utilisons votre token d'interface pour récupérer du contenu comme si vous le regardiez vous-même. La configuration la plus facile est avec un navigateur Internet sur ordinateur, mais des instructions pour mobiles sont disponibles sur notre Discord.",
+            "section": "connexions"
+        },
+        "q21": {
+            "title": "L'API FED fonctionne-t-elle sur tous les appareils ?",
+            "body": "Oui. Une fois configuré, votre jeton fonctionne sur tous les appareils connectés.",
+            "section": "connexions"
+        },
+        "q22": {
+            "title": "Pourquoi ai-je besoin d'une extension ou d'un proxy personnalisé ?",
+            "section": "connexions",
+            "body": "Certaines sources bloquent les \"scrapers\". Cette extension agit comme un proxy local et contourne tel bloquage utilisant votre IP, en-têtes, et cookies."
+        },
+        "q23": {
+            "title": "Qu'est ce que l'extension ? Est-elle sûre ?",
+            "section": "connexions",
+            "body": "C'est un outil de proxy local utilisé pour acceder a des streams qui restrictent des scrapers. Il reproduit votre session de navigation. Il est également entièrement open source et est disponible sur notre GitHub."
+        },
+        "q24": {
+            "section": "connexions",
+            "title": "Mon token Febbox échoue lors de l'installation. Que dois-je faire ?",
+            "body": "Votre FAI bloque peut-être l'API FED. Définissez un DNS personnalisé comme 1.1.1.1 ou NextDNS. Vous pouvez également modifier votre région dans le panneau d'administration."
+        },
+        "q25": {
+            "title": "Comment puis-je changer de langue ?",
+            "body": "Nous priorisons l'anglais, mais certaines sources propose d'autres langues. Essayer de changer de source. Pour FED API, seulement Safari prend en charge le changement d'audio via fichier MP4.",
+            "section": "langue"
+        },
+        "q26": {
+            "title": "Mes sous-titres ne sont pas synchronisés.",
+            "section": "langue",
+            "body": "Utilisez l'option «Personnaliser» dans les paramètres des sous-titres ou appuyez sur [ et ] sur votre clavier pour ajuster. Vous pouvez également importer votre propre fichier de sous-titres."
         }
     },
     "actions": {
         "copied": "Copié",
-        "copy": "Copier"
+        "copy": "Copier",
+        "confirm": "Confirmer",
+        "cancel": "Annuler"
     },
     "auth": {
         "createAccount": "Vous n'avez-vous pas encore de compte ? <0>Créer un compte.</0>",
@@ -36,7 +152,13 @@
             "description": "Le nom d'utilisateur et le mot de passe sont obtenus à partir de votre phrase d'accès. Vous devrez la saisir pour accéder à votre compte,<bold>alors gardez-la précieusement !</bold>",
             "next": "J'ai sauvegardé ma phrase d'accès",
             "passphraseFrameLabel": "Phrase d'accès",
-            "title": "Votre phrase d'accès"
+            "title": "Votre phrase d'accès",
+            "customPassphrasePlaceholder": "Entrez votre phrase secrète personnalisée",
+            "invalidPassphraseCharacters": "Caractères de phrase secrète non valides. Seuls les lettres anglaises, les chiffres de 1 à 10 et les symboles normaux sont autorisés.",
+            "useCustomPassphrase": "Utiliser une phrase secrète personnalisée",
+            "passphraseTooShort": "La phrase secrète doit comporter au moins 8 caractères.",
+            "customPassphraseLabel": "Phrase secrète personnalisée",
+            "custom": "Personaliser"
         },
         "hasAccount": "Vous avez déjà un compte ? <0>Connectez-vous ici.</0>",
         "login": {
@@ -94,7 +216,7 @@
         },
         "links": {
             "discord": "Discord",
-            "dmca": "DMCA",
+            "legal": "Legal / DMCA",
             "github": "GitHub",
             "twitter": "Twitter",
             "funding": "Soutenez-nous"
@@ -105,7 +227,7 @@
         "name": "P-Stream",
         "pages": {
             "about": "À propos",
-            "dmca": "DMCA",
+            "legal": "Legal / DMCA",
             "login": "Se connecter",
             "onboarding": "Mise en place",
             "pagetitle": "{{title}} - P-Stream",
@@ -118,7 +240,25 @@
     },
     "home": {
         "bookmarks": {
-            "sectionTitle": "Favoris"
+            "sectionTitle": "Favoris",
+            "groups": {
+                "dropdown": {
+                    "removeFromGroup": "Supprimer du groupe",
+                    "placeholderButton": "Ajouter au groupe",
+                    "empty": "Pas encore de groupe",
+                    "addButton": "Ajouter",
+                    "removeAll": "Supprimer tout"
+                },
+                "reorder": {
+                    "button": "Réorganiser",
+                    "done": "Fait",
+                    "title": "Modifier l'ordre du groupe",
+                    "description": "Faites glisser et déposez pour réorganiser vos groupes de marque-page",
+                    "cancel": "Annuler",
+                    "save": "Enregistrer"
+                }
+            },
+            "showAll": "Afficher tout"
         },
         "continueWatching": {
             "sectionTitle": "Reprendre la lecture"
@@ -140,7 +280,7 @@
                     "P-Stream est le meilleur site au monde !",
                     "Qu'est-ce que tu as prévu de regarder aujourd'hui ?",
                     "Comment s'est passée ta journée ?",
-                    null,
+                    "C'est ma faute, le site ne fonctionne jamais...",
                     "Est-ce que P-Stream n'est pas tout simplement le meilleur ?",
                     ">ᴗ<"
                 ]
@@ -180,7 +320,8 @@
             "420": {
                 "extra": [
                     "Joyeux 4/20 🥳!"
-                ]
+                ],
+                "default": "Qu'aimeriez-vous regarder ce 20/4?"
             },
             "69": {
                 "default": "Partant pour quelque chose de corsé ?",
@@ -203,7 +344,9 @@
         },
         "unreleased": "Non publié",
         "episodeShort": "E",
-        "seasonShort": "S"
+        "seasonShort": "S",
+        "seasonUnwatched": "Êtes-vous sûr de vouloir marquer la saison comme non regardée ?",
+        "seasonWatched": "Êtes-vous sûr de vouloir marquer la saison comme regardée ?"
     },
     "navigation": {
         "banner": {
@@ -318,7 +461,8 @@
                     "options": "Vos Options :",
                     "proxy": "2. Proxy",
                     "default": "3. Configuration par défaut",
-                    "defaultDescription": "Utilise le proxy intégré de P-Stream. C’est l’option la plus simple, mais elle peut être plus lente en raison de la bande passante partagée."
+                    "defaultDescription": "Utilise le proxy intégré de P-Stream. C’est l’option la plus simple, mais elle peut être plus lente en raison de la bande passante partagée.",
+                    "extensionDescription": "L'extension vous donne accès à la plupart des sources. Elle agit comme un proxy local et peut gérer les sites nécessitant des cookies ou des en-têtes spécifiques pour se charger."
                 },
                 "title": "Comprendre le paramétrage"
             }
@@ -359,7 +503,9 @@
                 },
                 "title": "Télécharger",
                 "hlsDownloader": "Ou rendez-vous sur le site <0>HLS Downloader Website</0> et collez l’URL de la playlist ci-dessous.",
-                "button": "Essayer de télécharger"
+                "button": "Essayer de télécharger",
+                "vlc": "VLC",
+                "openIn": "Ouvrir dans..."
             },
             "episodes": {
                 "button": "Épisodes",
@@ -443,7 +589,7 @@
                 "text": "Impossible de charger les métadonnées de l'API, veuillez vérifier votre connexion Internet.",
                 "title": "Échec du chargement des métadonnées de l'API"
             },
-            "dmca": {
+            "legal": {
                 "badge": "Supprimé",
                 "text": "Ce média n'est plus disponible en raison d'un avis de retrait ou d'une réclamation pour atteinte aux droits d'auteur.",
                 "title": "Le média a été supprimé"
@@ -524,8 +670,8 @@
         }
     },
     "screens": {
-        "dmca": {
-            "title": "DMCA"
+        "legal": {
+            "title": "Legal / DMCA"
         },
         "loadingApp": "Chargement de l'application",
         "loadingUser": "Chargement de votre profil",
@@ -747,8 +893,6 @@
         "language": "Langue :",
         "episode": "Épisode",
         "endsAt": "Finit dans {{time}}",
-        "director": "Réalisateur :",
-        "cast": "Acteurs :",
         "runtime": "Durée :",
         "seasons": "Saison(s)",
         "trailer": "Bande-annonce"
@@ -803,12 +947,15 @@
             "title": "Téléverser les données",
             "status": {
                 "processing": "Traitement des données en cours...",
-                "success": "Vos données ont été téléchargées avec succès! 🎉"
+                "success": "Vos données ont été téléchargées avec succès! 🎉",
+                "error": "Impossible de télécharger vos données. 😿",
+                "successLocal": "Vos données ont été enregistrées localement ! 🎉"
             },
             "file": {
                 "select": "Choisir un fichier",
                 "change": "Changer de fichier",
-                "name": "Nom du fichier"
+                "name": "Nom du fichier",
+                "description": "Sélectionnez le fichier que vous souhaitez télécharger"
             },
             "dataPreview": "Aperçu :",
             "items": {
@@ -820,7 +967,8 @@
                 "import": "Importer des données",
                 "processing": "Traitement en cours...",
                 "success": "Importation terminée",
-                "home": "Continuer vers l’accueil"
+                "home": "Continuer vers l’accueil",
+                "saveLocal": "Enregistrer localement"
             }
         },
         "direct": {
